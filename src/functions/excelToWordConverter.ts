@@ -46,12 +46,13 @@ const createWordDocument = (data: InterpreterAssignment[]) => {
             bottom: { style: "single", size: 8 },
             left: { style: "single", size: 8 },
           },
-          width: { type: WidthType.AUTO, size: 100 },
+          width: { type: WidthType.PERCENTAGE, size: 100 },
+          columnWidths: [10000],
           rows: [
             new TableRow({
               children: [
                 new TableCell({
-                  width: { type: WidthType.AUTO, size: 100 },
+                  width: { type: WidthType.PERCENTAGE, size: 100 },
                   children: [
                     new Paragraph({
                       children: [
@@ -134,6 +135,7 @@ const createWordDocument = (data: InterpreterAssignment[]) => {
             }),
           ],
         }),
+        new Paragraph({ text: "", spacing: { after: 400 } }),
       ];
     })
     .filter(Boolean)
